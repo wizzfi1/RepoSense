@@ -5,7 +5,7 @@ param (
     [string]$Path = "."
 )
 
-Write-Output "RepoSense — GitHub Copilot CLI–powered repository assistant"
+Write-Output "RepoSense - GitHub Copilot CLI powered repository assistant"
 Write-Output "------------------------------------------------------------"
 Write-Output "Target path: $Path"
 Write-Output ""

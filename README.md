@@ -6,6 +6,31 @@ A lightweight CLI tool that harnesses the power of GitHub Copilot CLI to provide
 
 RepoSense is a script-based CLI wrapper around GitHub Copilot CLI, designed to streamline repository analysis and documentation tasks. It provides three key commands to help teams work more effectively with their codebases:
 
+## Why RepoSense?
+
+Understanding an unfamiliar repository often involves:
+- Manually reading files
+- Guessing architecture
+- Writing documentation from scratch
+- Identifying gaps through trial and error
+
+RepoSense compresses that workflow into a few terminal commands by leveraging
+GitHub Copilot CLI as an interactive analysis engine.
+
+## Built with GitHub Copilot CLI
+
+RepoSense is intentionally built **around** GitHub Copilot CLI.
+
+Rather than re-implementing static analyzers or repository scanners, RepoSense
+acts as a lightweight orchestration layer that:
+
+- Structures high-quality prompts
+- Delegates analysis to GitHub Copilot CLI
+- Presents Copilot’s output in a consistent, repeatable workflow
+
+This approach treats Copilot as a **development partner**, not just a background tool.
+
+
 - **Explain**: Get comprehensive analysis of repository purpose, architecture, and structure
 - **README**: Auto-generate professional README documentation
 - **Suggest**: Receive prioritized, actionable improvement recommendations
@@ -20,6 +45,8 @@ Verify installation:
 ```powershell
 gh copilot --version
 ```
+> Note: RepoSense does not call GitHub APIs directly. All intelligence is provided
+> through GitHub Copilot CLI.
 
 ## Installation
 
@@ -118,7 +145,8 @@ Analyzes a repository and provides prioritized, actionable recommendations acros
 RepoSense operates as an intelligent CLI wrapper that:
 
 1. **Accepts Commands**: Takes user input for the desired analysis type
-2. **Delegates to Copilot**: Passes repository context to GitHub Copilot CLI
+2. **Delegates to Copilot**: Passes focused, task-specific prompts to GitHub Copilot CLI, allowing Copilot
+to explore the repository and generate context-aware responses directly from the terminal.
 3. **Delivers Results**: Outputs structured, AI-powered analysis to the terminal
 
 The tool was designed collaboratively with GitHub Copilot CLI to provide a seamless interface for repository analysis without requiring direct interaction with underlying APIs.
@@ -235,6 +263,7 @@ For questions, issues, or feedback:
 - Provide detailed context including command used and output
 
 ## Roadmap
+These items are intentionally out of scope for the current MVP and listed as future ideas only.
 
 Future enhancements may include:
 - Support for additional languages and frameworks
@@ -248,3 +277,6 @@ Future enhancements may include:
 - [GitHub Copilot CLI Documentation](https://docs.github.com/en/copilot)
 - [GitHub CLI Installation](https://github.com/cli/cli#installation)
 - [PowerShell Documentation](https://docs.microsoft.com/en-us/powershell/)
+
+
+
