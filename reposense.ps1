@@ -29,6 +29,12 @@ switch ($Command) {
     "health" {
         gh copilot -i "Analyze the repository located at '$Path' and generate a project health report. Evaluate documentation, testing, CI/CD, project structure, dependency management, and security practices. Give a score out of 100 and explain strengths, weaknesses, and top recommendations."
     }
+    "security" {
+        gh copilot -i "Analyze the repository located at '$Path' from a security perspective. Look for potential hardcoded secrets, insecure configuration, weak authentication or authorization patterns, unsafe dependency practices, exposed sensitive data, and general security risks. Prioritize findings by severity and recommend fixes."
+    }
+    "generate-tests" {
+        gh copilot -i "Analyze the repository located at '$Path' and recommend a practical testing strategy. Identify the most important files or modules to test first, suggest the appropriate testing framework for this codebase, and generate test scaffolding or sample test cases for the highest-value areas."
+    }
     default {
         Write-Output "Unknown command: $Command"
         Write-Output ""
@@ -39,5 +45,7 @@ switch ($Command) {
         Write-Output "  reposense onboard [path]"
         Write-Output "  reposense review [path]"
         Write-Output "  reposense health [path]"
+        Write-Output "  reposense security [path]"
+        Write-Output "  reposense generate-tests [path]"
     }
 }
